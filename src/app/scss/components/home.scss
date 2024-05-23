@@ -1,0 +1,30 @@
+@use "../utils/" as *;
+
+.hero-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    color: #293264;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: rem(100) rem(100) 0 rem(100);
+        text-align: center;
+    }
+
+    .btn{
+        width: rem(190);
+        height: rem(50);
+        border-radius: rem(15);
+        border: none;
+        background-color: #4D5B9E;
+        color: white;
+        font-size: rem(20);
+        margin: rem(100) auto;
+    }
+}
