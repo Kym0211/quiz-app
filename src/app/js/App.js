@@ -10,7 +10,7 @@ export default function App(){
         quizType.length ? localStorage.setItem("quizType", JSON.stringify(quizType)) : localStorage.setItem("quizType", JSON.stringify([{category: 1}, {difficulty: "easy"}, {questions: 10}]));
     },[quizType]);
 
-    const categories=['General Knowledge', 'Science & Nature', 'sports', 'Politics','Art']
+    const categories=['General Knowledge', 'Science & Nature', 'sports', 'Politics','Gadgets']
     const difficulties=['easy', 'medium', 'hard']
     const questions=[10, 20, 30]
     

@@ -29,6 +29,17 @@
         font-size: rem(28);
         font-weight: bold;
     }
+    .select{
+        width: rem(120);
+        height: rem(50);
+        border-radius: rem(15);
+        border: 2px solid #4D5B9E;
+        margin: rem(20) auto;
+        padding: rem(5);
+        font-size: rem(20);
+        margin-right: rem(20);
+        cursor: pointer;
+    }
     @include breakpoint-down(medium){
         .quiz-details{
             display: flex;
@@ -40,27 +51,17 @@
             font-size: rem(20);
         }
         .select{
-            width: rem(70);
+            width: rem(200);
             height: rem(40);
             border-radius: rem(10);
             border: 2px solid #4D5B9E;
             margin: rem(20) auto;
             padding: rem(5);
             font-size: rem(16);
+            text-align: center;
             margin-right: rem(10);
             cursor: pointer;
         }
-    }
-    .select{
-        width: rem(120);
-        height: rem(50);
-        border-radius: rem(15);
-        border: 2px solid #4D5B9E;
-        margin: rem(20) auto;
-        padding: rem(5);
-        font-size: rem(20);
-        margin-right: rem(20);
-        cursor: pointer;
     }
     .select:focus{
         outline: none;
