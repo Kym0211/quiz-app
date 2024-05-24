@@ -1,13 +1,14 @@
-// 640px, 1150px, 1440px
+// 640px,850px 1150px, 1440px
 $breakpoints-up: (
-    'medium': '40em',
+    'small': '40em',
+    'medium': '53.125em',
     'large': '71.875em',
     'xlarge': '87.5em'
 );
 
-// 639px, 1149px, 1399px
+// 849px, 1149px, 1399px
 $breakpoints-down: (
-    'medium': '39.9375em',
+    'medium': '53.0625em',
     'large': '71.8125em',
     'xlarge': '87.4375em'
 );

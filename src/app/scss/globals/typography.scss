@@ -6,25 +6,25 @@ h1,h2,h3{
 }
 
 h1{
-    font-size: rem(30);
+    font-size: rem(36);
     margin-bottom: rem(3);
     @include breakpoint(large){
-        font-size: rem(36);
+        font-size: rem(42);
     }
 }
 
 h2{
-    font-size: rem(24);
+    font-size: rem(28);
     margin-bottom: rem(3);
     @include breakpoint(large){
-        font-size: rem(30);
+        font-size: rem(34);
     }
 }
 p{
-    font-size: rem(16);
+    font-size: rem(20);
     margin-bottom: rem(3);
     @include breakpoint(large){
-        font-size: rem(18);
+        font-size: rem(24);
     }
 
 }

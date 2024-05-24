@@ -6,15 +6,73 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: white;
+    background-color: #F5F7FB;
     color: #293264;
+    @include breakpoint-down(medium){
+        padding: rem(20);
+        height: inherit;
+    }
 
     .container{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: rem(100) rem(100) 0 rem(100);
         text-align: center;
+        @include breakpoint(medium){
+            margin: rem(100) rem(100) rem(50) rem(100);
+        }
+        @include breakpoint-down(medium){
+            margin: rem(20);
+        }
+    }
+    .label{
+        font-size: rem(28);
+        font-weight: bold;
+    }
+    @include breakpoint-down(medium){
+        .quiz-details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .label{
+            font-size: rem(20);
+        }
+        .select{
+            width: rem(70);
+            height: rem(40);
+            border-radius: rem(10);
+            border: 2px solid #4D5B9E;
+            margin: rem(20) auto;
+            padding: rem(5);
+            font-size: rem(16);
+            margin-right: rem(10);
+            cursor: pointer;
+        }
+    }
+    .select{
+        width: rem(120);
+        height: rem(50);
+        border-radius: rem(15);
+        border: 2px solid #4D5B9E;
+        margin: rem(20) auto;
+        padding: rem(5);
+        font-size: rem(20);
+        margin-right: rem(20);
+        cursor: pointer;
+    }
+    .select:focus{
+        outline: none;
+    }
+    .category{
+        @include breakpoint(large){
+            width: rem(220);
+        }
+    }
+    .option{
+        font-size: rem(20);
+        width: rem(100);
     }
 
     .btn{
@@ -26,5 +84,9 @@
         color: white;
         font-size: rem(20);
         margin: rem(100) auto;
+        cursor: pointer;
+        @include breakpoint-down(medium){
+            margin: rem(20) auto;
+        }
     }
 }
