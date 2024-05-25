@@ -1,1 +1,39 @@
 @use '../utils/' as *;
+
+.hero-container{
+    height: 100vh;
+    background-color: #F5F7FB;
+    color: #293264;
+    &::before {
+        content: "";
+        position: absolute;     
+        width: rem(300);
+        height: rem(200);
+        background-color: yellow;
+        top: -70px;
+        right: -75px;
+        border-radius: 0% 0% 50% 100%;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        width: rem(300); 
+        height: rem(240); 
+        background-color: #a2d9f3; 
+        bottom: -70px;
+        left: -70px;
+        border-radius: 70% 75% 60% 0%;
+    }
+    @include breakpoint-down(medium){
+        padding: rem(20);
+        height: inherit;
+
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+    }
+}

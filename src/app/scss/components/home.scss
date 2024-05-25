@@ -3,15 +3,10 @@
 .hero-container{
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    background-color: #F5F7FB;
-    color: #293264;
-    @include breakpoint-down(medium){
-        padding: rem(20);
-        height: inherit;
-    }
 
     .container{
         display: flex;
@@ -24,6 +19,7 @@
         @include breakpoint-down(medium){
             margin: rem(20);
         }
+
     }
     .label{
         font-size: rem(28);
@@ -38,7 +34,12 @@
         padding: rem(5);
         font-size: rem(20);
         margin-right: rem(20);
+        color: #293264;
         cursor: pointer;
+
+        &:focus{
+            outline: none;
+        }
     }
     @include breakpoint-down(medium){
         .quiz-details{
@@ -63,9 +64,7 @@
             cursor: pointer;
         }
     }
-    .select:focus{
-        outline: none;
-    }
+    
     .category{
         @include breakpoint(large){
             width: rem(220);
@@ -73,7 +72,8 @@
     }
     .option{
         font-size: rem(20);
-        width: rem(100);
+        width: rem(70);
+        color: #293264;
     }
 
     .btn{
@@ -88,6 +88,14 @@
         cursor: pointer;
         @include breakpoint-down(medium){
             margin: rem(20) auto;
+        }
+
+        &:hover{
+            background-color: #293264;
+        }
+        &:focus{
+            outline: none;
+            box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.25);
         }
     }
 }
