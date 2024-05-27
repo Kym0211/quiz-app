@@ -1,6 +1,6 @@
 @use "../utils/" as *;
 
-.hero-container{
+.home-page-container{
     display: flex;
     justify-content: center;
     position: relative;
@@ -29,12 +29,13 @@
         width: rem(120);
         height: rem(50);
         border-radius: rem(15);
-        border: 2px solid #4D5B9E;
+        border: 2px solid var(--border);
         margin: rem(20) auto;
         padding: rem(5);
         font-size: rem(20);
+        text-align: center;
         margin-right: rem(20);
-        color: #293264;
+        color: var(--font-color);
         cursor: pointer;
 
         &:focus{
@@ -55,7 +56,7 @@
             width: rem(200);
             height: rem(40);
             border-radius: rem(10);
-            border: 2px solid #4D5B9E;
+            border: 2px solid var(--border);
             margin: rem(20) auto;
             padding: rem(5);
             font-size: rem(16);
@@ -73,29 +74,8 @@
     .option{
         font-size: rem(20);
         width: rem(70);
-        color: #293264;
+        color: var(--font-color);
     }
 
-    .btn{
-        width: rem(190);
-        height: rem(50);
-        border-radius: rem(15);
-        border: none;
-        background-color: #4D5B9E;
-        color: white;
-        font-size: rem(20);
-        margin: rem(100) auto;
-        cursor: pointer;
-        @include breakpoint-down(medium){
-            margin: rem(20) auto;
-        }
 
-        &:hover{
-            background-color: #293264;
-        }
-        &:focus{
-            outline: none;
-            box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.25);
-        }
-    }
 }

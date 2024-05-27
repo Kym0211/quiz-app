@@ -2,14 +2,14 @@
 
 .hero-container{
     height: 100vh;
-    background-color: #F5F7FB;
-    color: #293264;
+    background-color: var(--bg-color);
+    color: var(--font-color);
     &::before {
         content: "";
-        position: absolute;     
+        position: fixed;     
         width: rem(300);
         height: rem(200);
-        background-color: yellow;
+        background-color: var(--right-top);
         top: -70px;
         right: -75px;
         border-radius: 0% 0% 50% 100%;
@@ -17,10 +17,10 @@
     
     &::after {
         content: "";
-        position: absolute;
+        position: fixed;
         width: rem(300); 
         height: rem(240); 
-        background-color: #a2d9f3; 
+        background-color: var(--left-bottom); 
         bottom: -70px;
         left: -70px;
         border-radius: 70% 75% 60% 0%;
@@ -34,6 +34,28 @@
         }
         &::after {
             display: none;
+        }
+    }
+    .btn{
+        width: rem(190);
+        height: rem(50);
+        border-radius: rem(15);
+        border: none;
+        background-color: var(--border);
+        color: var(--bg-color);
+        font-size: rem(20);
+        margin: rem(100) auto;
+        cursor: pointer;
+        @include breakpoint-down(medium){
+            margin: rem(20) auto;
+        }
+
+        &:hover{
+            background-color: var(--font-color);
+        }
+        &:focus{
+            outline: none;
+            box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.25);
         }
     }
 }

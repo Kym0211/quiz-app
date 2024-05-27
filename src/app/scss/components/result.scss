@@ -1,0 +1,15 @@
+@use '../utils/' as *;
+
+.result-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+
+    &-content{
+        margin-top: rem(20);
+    }
+}
