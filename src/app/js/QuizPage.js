@@ -15,7 +15,7 @@ export default function QuizPage(props) {
         return storedOptions ? JSON.parse(storedOptions) : null;
     }
 
-    console.log(props);
+    // console.log(props);
     const [shuffledOptions, setShuffledOptions] = useState(() => {
         const storedOptions = getStoredOptions();
         if (storedOptions) return storedOptions;
@@ -39,7 +39,18 @@ export default function QuizPage(props) {
         };
         setFormData(updatedFormData);
         localStorage.setItem("quizData", JSON.stringify(updatedFormData));
+        // if ans of question updated or new ans is given then score will be updated
+        // props.data.find(x => x.question === event.target.name).correct_answer) ---> this will give correct ans of that question
+        // given ans is given by event.target.value
     }
+
+    useEffect(() => {
+        let score = 0;
+        props.data.forEach((item) => {
+            if (formData[item.question] === item.correct_answer) score++;
+        });
+        props.setScore(score);
+    },[formData]); // for updating score
 
     function createOptions(item) {
         const optionsForQuestion = shuffledOptions.find(x => x.question === item.question).options;
@@ -62,13 +73,7 @@ export default function QuizPage(props) {
 
     function submitQuiz(event) {
         event.preventDefault();
-        let score = 0;
-        props.data.forEach(item => {
-            if (formData[item.question] === item.correct_answer){
-                score++;
-            }
-        });
-        props.setScore(score);
+        
         localStorage.removeItem("quizStartTime");
         localStorage.removeItem("quizData");
         localStorage.removeItem("shuffledOptions");
