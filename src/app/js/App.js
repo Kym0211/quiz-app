@@ -44,10 +44,7 @@ export default function App(){
     if (quizData.length){
         data = quizData
     }else{
-        if(quizType[0].category === 1){
-            console.log("gk")
-            data1 = data.results.filter((item) => item.category === "General Knowledge");
-        }
+        data1 = data.results
     }
 
 
