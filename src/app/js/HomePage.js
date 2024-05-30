@@ -5,7 +5,7 @@ export default function Home(props) {
   const navigate = useNavigate();
 
   // Quiz type options
-  const categories=['General Knowledge', 'Science & Nature', 'sports', 'Politics','Gadgets']
+  const categories=['General Knowledge', 'Science & Nature', 'sports','Gadgets']
   const difficulties=['easy', 'medium', 'hard']
   const questions=[10, 20, 30]
 
@@ -21,7 +21,8 @@ export default function Home(props) {
   }
 
   function handleStartQuiz(){
-    navigate('/quiz')
+    if(props.isAvailable) navigate("/quiz")
+    else alert("This category is not available for 30 questions")
   }
   
   // Default values for select options

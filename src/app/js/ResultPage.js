@@ -22,7 +22,7 @@ export default function ResultPage(props) {
                 <h1 className="result-page-content">Quiz Completed</h1>
                 <h2 className="result-page-content">Your Score: {props.score}</h2>
                 <h2 className="result-page-content">{message()}</h2>
-                <button className="btn" onClick={handleStartQuiz}>Try Again</button>
+                <button type="button" className="btn" onClick={handleStartQuiz}>Try Again</button>
             </div>
             {props.score > 6 && <Confetti width={window.innerWidth || 300}  />}
         </>

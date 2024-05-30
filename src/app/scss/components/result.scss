@@ -10,6 +10,9 @@
     flex-direction: column;
 
     &-content{
+        text-align: center;
+    }
+    &-content{
         margin-top: rem(20);
     }
 }
