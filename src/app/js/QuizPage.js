@@ -31,6 +31,8 @@ export default function QuizPage(props) {
         }
     }); // for storing shuffled options
 
+    console.log(shuffledOptions);
+
     function handleChange(event) {
         const { name, value } = event.target;
         const updatedFormData = {
@@ -53,7 +55,12 @@ export default function QuizPage(props) {
     },[formData]); // for updating score
 
     function createOptions(item) {
-        const optionsForQuestion = shuffledOptions.find(x => x.question === item.question).options;
+        // console.log(shuffledOptions)
+        let optionsForQuestion = [];
+        shuffledOptions.forEach(x => {
+            if (x.question === item.question) optionsForQuestion = x.options;
+        });
+
         return optionsForQuestion.map((option) => {
             return (
                 <section key={nanoid()} className="option">
