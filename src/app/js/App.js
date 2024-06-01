@@ -3,16 +3,20 @@ import Home from "./HomePage";
 import data from "./data.json";  // temprory for styling puropse  
 import QuizPage from "./QuizPage";
 import ResultPage from "./ResultPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, json } from "react-router-dom";
 
 // data.results.map((item) => {
 //     console.log(item.question)
 // })
 
 export default function App(){
-    
-    
-    const [quizType, setQuizType] = useState(JSON.parse(localStorage.getItem("quizType"))||[]);  // for storing quiz type to make quiz url so that i can fetch data from api
+    const [quizType, setQuizType] = useState(JSON.parse(localStorage.getItem("quizType"))||[{category: 1}, {difficulty: "easy"}, {questions: 10}]);  // for storing quiz type to make quiz url so that i can fetch data from api
+    // if(!quizType.length){
+    //     setQuizType([{category: 1}, {difficulty: "easy"}, {questions: 10}])
+    // }
+
+    console.log(quizType)
+
     useEffect(() => {
         quizType.length ? localStorage.setItem("quizType", JSON.stringify(quizType)) : localStorage.setItem("quizType", JSON.stringify([{category: 1}, {difficulty: "easy"}, {questions: 10}]));
     },[quizType,App]);
@@ -25,10 +29,11 @@ export default function App(){
         30: 20 //15000
     }
     let data1 = data.gk_easy_10
-    let difficulty = quizType[1].difficulty === 'medium' ? 'med' : quizType[1].difficulty
+    let difficulty = "easy"
+    difficulty = quizType[1].difficulty
+    if(difficulty === "medium") difficulty = "med"
     let available = true
 
-    console.log(quizType)
 
     if(quizType[0].category === '1'){
         data1 = data[`gk_${difficulty}_${quizType[2].questions}`]
@@ -46,7 +51,7 @@ export default function App(){
     }
 
     return(
-        <Router basename="/quiz-app">
+        <Router basename="/">
             <Routes>
                 <Route path="/" element={<Home quizType={quizType} setQuizType={setQuizType} isAvailable={available} />} />
                 <Route path="/quiz" element={<QuizPage data={data1} time={time[quizType[2].questions]} setScore={setScore}/>} />
