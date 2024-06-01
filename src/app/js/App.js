@@ -24,9 +24,9 @@ export default function App(){
     const [score, setScore] = useState(0); // for storing score
 
     const time = {
-        10: 5, //5000
-        20: 10, //10000
-        30: 20 //15000
+        10: 180, 
+        20: 360, //10000
+        30: 540 //15000
     }
     let data1 = data.gk_easy_10
     let difficulty = "easy"
